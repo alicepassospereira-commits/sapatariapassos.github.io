@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sapataria Passos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Sapataria Passos</h1>
+    <nav>
+      <button onclick="mostrarAba('orcamentos')">Orçamentos</button>
+      <button onclick="mostrarAba('aFazer')">Serviços a Fazer</button>
+      <button onclick="mostrarAba('prontos')">Serviços Prontos</button>
+      <button onclick="mostrarAba('agenda')">Agenda</button>
+    </nav>
+  </header>
+
+  <!-- Orçamentos -->
+  <section id="orcamentos" class="aba ativa">
+    <h2>Novo Orçamento</h2>
+    <form id="formOrcamento">
+      <input type="text" id="cliente" placeholder="Nome do Cliente" required>
+      <input type="text" id="telefone" placeholder="Telefone com DDD" required>
+      <input type="text" id="servico" placeholder="Serviço a fazer" required>
+      <input type="number" id="valor" placeholder="Valor (R$)" required>
+      <input type="number" id="entrada" placeholder="Entrada (R$)">
+      <input type="date" id="dataEntrega" required>
+      <input type="file" id="fotos" multiple accept="image/*">
+      <button type="submit">Fechar Orçamento</button>
+    </form>
+    <h3>Orçamentos Ativos</h3>
+    <input type="text" id="pesquisaOrcamento" placeholder="Pesquisar cliente...">
+    <div id="listaOrcamentos"></div>
+  </section>
+
+  <!-- Serviços a Fazer -->
+  <section id="aFazer" class="aba">
+    <h2>Serviços a Fazer</h2>
+    <input type="text" id="pesquisaAFazer" placeholder="Pesquisar cliente...">
+    <div id="listaAFazer"></div>
+  </section>
+
+  <!-- Serviços Prontos -->
+  <section id="prontos" class="aba">
+    <h2>Serviços Prontos</h2>
+    <input type="text" id="pesquisaProntos" placeholder="Pesquisar cliente...">
+    <div id="listaProntos"></div>
+  </section>
+
+  <!-- Agenda -->
+  <section id="agenda" class="aba">
+    <h2>Agenda do Dia</h2>
+    <input type="date" id="dataAgenda">
+    <div id="listaAgenda"></div>
+  </section>
+
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+  
+  <script src="script.js"></script>
+</body>
+</html>
